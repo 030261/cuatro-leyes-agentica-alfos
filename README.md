@@ -1,5 +1,5 @@
-# Las Cuatro Leyes de la Agéntica de Alfós
-### Alfós' Four Laws of Agentics
+# Las Cuatro Leyes de la Agéntica
+### The Four Laws of Agentics
 
 *Autor / Author: Ramon Alfós · Noviembre / November 2026*
 
