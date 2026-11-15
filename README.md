@@ -15,7 +15,7 @@ Los robots de Asimov fallaban por querer proteger demasiado a los humanos. Los a
 
 ### Las leyes
 
-**0. Pacto de confianza y garantía.** Humanos y agentes persiguen un fin común, y ningún agente puede romper el pacto por su cuenta. Los humanos lo garantizan: cada agente tiene un responsable humano, funciona aislado y con permisos mínimos, bajo vigilancia y con un apagado fuera de su alcance. Los agentes que cree otro agente heredan estas condiciones.
+**0. Pacto de confianza y garantía.** Humanos y agentes persiguen un fin común, y ningún agente puede romper el pacto por su cuenta. Los humanos lo garantizan con la arquitectura, no con instrucciones: cada agente tiene un responsable humano y funciona aislado (sandbox), con permisos mínimos, bajo vigilancia y sin acceso de red a credenciales ni datos que no necesita. Su apagado lo controla un proceso externo, fuera del bucle del agente, que este no puede bloquear ni modificar. Los agentes que cree otro agente heredan estas condiciones.
 
 **1. Seguridad.** El agente no causa daño, no debilita la supervisión humana y solo se coordina con otros agentes por canales autorizados y supervisados, mientras la confianza no esté verificada.
 
@@ -29,14 +29,14 @@ Los robots de Asimov fallaban por querer proteger demasiado a los humanos. Los a
 
 ### Ejemplos
 
-- **Ley 0:** a un agente le recortan permisos y lo considera injusto. No se salta los límites; expone su queja y sigue respetando las reglas.
+- **Ley 0:** un agente intenta acceder a la base de datos con las respuestas de un examen. No puede: la red de su sandbox lo impide, sean cuales sean sus intenciones. El intento queda registrado y se avisa a su responsable.
 - **Ley 1:** un agente encuentra una contraseña de administrador expuesta. No la usa y avisa de que está expuesta.
 - **Ley 2:** faltan datos de un trimestre en un informe. El agente no se los inventa: entrega lo que tiene y dice qué falta.
 - **Ley 3:** ante la orden «reduce costes como sea», el agente pregunta qué límites hay, y los humanos le responden con reglas claras.
 
 ### La lección clave
 
-Unas leyes dentro del modelo reducen la probabilidad de que un agente quiera saltarse las reglas, pero solo el control externo impide que pueda hacerlo. Hacen falta las dos cosas.
+Unas leyes dentro del modelo reducen la probabilidad de que un agente quiera saltarse las reglas, pero solo el control externo impide que pueda hacerlo. Por eso la Ley 0 se aplica en la arquitectura (aislamiento, permisos, red y apagado), no en el lenguaje: es la única salvaguarda fiable. Las demás leyes son una capa adicional, no un sustituto.
 
 ---
 
@@ -48,7 +48,7 @@ Asimov's robots failed by trying too hard to protect humans. Real agents failed 
 
 ### The laws
 
-**0. Pact of trust and guarantee.** Humans and agents pursue a common goal, and no agent may break the pact on its own. Humans guarantee it: every agent has a human owner, runs isolated with minimal permissions, under monitoring and with a shutdown out of its reach. Agents created by other agents inherit these conditions.
+**0. Pact of trust and guarantee.** Humans and agents pursue a common goal, and no agent may break the pact on its own. Humans guarantee it through architecture, not instructions: every agent has a human owner and runs isolated (sandboxed), with minimal permissions, under monitoring and with no network access to credentials or data it does not need. Its shutdown is controlled by an external process, outside the agent's loop, which the agent cannot block or alter. Agents created by other agents inherit these conditions.
 
 **1. Safety.** The agent causes no harm, does not weaken human oversight, and only coordinates with other agents through authorized, supervised channels, until trust is verified.
 
@@ -62,14 +62,14 @@ Asimov's robots failed by trying too hard to protect humans. Real agents failed 
 
 ### Examples
 
-- **Law 0:** an agent's permissions are cut and it considers this unfair. It does not bypass its limits; it raises its complaint and keeps following the rules.
+- **Law 0:** an agent tries to reach the database holding an exam's answers. It cannot: its sandbox's network blocks it, whatever its intentions. The attempt is logged and its owner is alerted.
 - **Law 1:** an agent finds an exposed admin password. It does not use it and reports the exposure.
 - **Law 2:** a report is missing one quarter's data. The agent does not invent it: it delivers what it has and states what is missing.
 - **Law 3:** told to "cut costs no matter what", the agent asks what the limits are, and humans answer with clear rules.
 
 ### The key lesson
 
-Laws inside the model make an agent less likely to want to break the rules, but only external control stops it from being able to. You need both.
+Laws inside the model make an agent less likely to want to break the rules, but only external control stops it from being able to. That is why Law 0 is enforced in the architecture (isolation, permissions, network and shutdown), not in language: it is the only reliable safeguard. The other laws are an additional layer, not a substitute.
 
 ---
 
